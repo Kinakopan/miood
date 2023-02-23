@@ -4,8 +4,9 @@ import { prisma } from '@/server/db/client'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
-import Weather from '@/pages/api/weather.js';
-import UserName from '@/component/UserName.js';
+import Weather from '@/pages/api/weather';
+import SideMenu from '@/component/SideMenu';
+import UserName from '@/component/UserName';
 
 export default function Home({posts}) {
 
@@ -39,12 +40,15 @@ export default function Home({posts}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <SideMenu />
+
       <main className={styles.main}>
         <div className={styles.wrapper_main}>
+
           <h1 className={styles.ttl_page}><UserName /> Diary</h1>
 
           <form
-            className={styles.form}
+            className={`${styles.paper} ${styles.form}`}
             onSubmit={handleSubmit}
             >
 
@@ -79,6 +83,7 @@ export default function Home({posts}) {
           </form>
         </div>
       </main>
+
     </div>
   )
 }
@@ -93,15 +98,22 @@ export async function getServerSideProps() {
   }
 }
 
-export function MyPosts() {
+export const MyPosts = (props) => {
+  const { posts } = props;
+
   return (
-    <div>
+    <ul className={styles.post_list}>
       {posts.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.content}</p>
-        </div>
+        <li
+          key={post.id}
+          className={styles.post_listitem}>
+          <a href="">
+            <p>{}</p>
+            <h2>{post.title}</h2>
+            <p>{post.content}</p>
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }

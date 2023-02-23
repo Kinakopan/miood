@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -295,7 +296,6 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -311,6 +311,10 @@
   padding: 0;
   min-height: unset;
   text-align: center;
+}
+
+.wrapper_main {
+  padding: 2rem;
 }
 
 .row {
@@ -393,20 +397,79 @@
   outline: none;
 }
 
+/*------- COMP MyPosts -------*/
+.post_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  list-style: none;
+  line-height: 3rem;
+}
+
+.post_listitem {
+
+}
+
+/*------- COMP SideMenu -------*/
+.wapper_sidemenu {
+  background-color: #585858;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100vh;
+  position: sticky;
+}
+
+.wapper_sidemenu {
+  overflow: visible;
+}
+
+.sidemenu_list {
+  background-color: white;
+}
+
+.sidemenu_list_item {
+  width: 100%;
+  background-color: #585858;
+  color: white;
+  line-height: 3rem;
+  border-bottom: solid 1px grey;
+  list-style: none;
+}
+
+.sidemenu_list_item:hover {
+  background-color: white;
+  margin-left: 1rem;
+  border-bottom: solid 1px white;
+}
+
+.sidemenu_list_text  {
+  display: flex;
+  height: 100%;
+  color: white;
+  padding: 1rem;
+}
+
+.sidemenu_list_text:hover {
+  color: black;
+}
+
 /* ============================================
               pages > index.js
 ============================================ */
 
 /*------- pages > index.js - General -------*/
-
 .wrapper_home {
+  display: flex;
+  flex-direction: row;
   content: "";
   background: url("../public/wooden.jpeg");
   background-repeat: repeat;
   background-size: cover;
 }
 
-.form {
+.paper {
   background-color: #fff;
   color: black;
   width: 70vw;

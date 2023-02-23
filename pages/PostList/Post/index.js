@@ -1,4 +1,5 @@
 import styles from '@/styles/Home.module.css'
+import { Inter } from '@next/font/google'
 import { prisma } from '@/server/db/client'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -42,11 +43,10 @@ export default function PostList({posts}){
         <div className={styles.wrapper_main}>
           <h1 className={styles.ttl_page}>List of <UserName /> Diary</h1>
 
-          <div className={styles.paper}>
-            <MyPosts posts={posts} />
+          <MyPosts posts={posts} />
+
           </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
   )
 }
